@@ -8,7 +8,7 @@ var appSecret = "3adf5088350e3f063f81ff838e872d1b";
 var token = "WeChatMaoge";
 
 var users = 0;
-var returnInfo = [0, 0, 0, 0];
+var returnInfo = "";
 
 router.get('/', function *(next) {
     ++users;
@@ -51,32 +51,41 @@ router.post('/handleRecord', function *(next) {
     users++;
     var data = this.request.body;
     seconds = data.seconds;
-    var deviceNo = users % 6;
+    var deviceNo = users % 4;
     if (deviceNo == 0) {
-        deviceNo = 6;
+        deviceNo = 4;
     }
+    returnInfo = deviceNo.toString();
+
     console.log("deviceNo:", deviceNo);
 
-    if (seconds <= 3) {
-        returnInfo[deviceNo] += 1;
-    } else if (seconds > 3 && seconds <= 6) {
-        returnInfo[deviceNo] += 2;
-    } else if ( seconds > 6 && seconds <= 9) {
-        returnInfo[deviceNo] += 3;
-    } else {
-        returnInfo[deviceNo] += 4;
+     if (seconds < 10) {
+        var indexOfFan = "0" + seconds.toString();
+    }else{
+        indexOfFan = seconds.toString();
     }
 
-    if (returnInfo[deviceNo] > 4) {
-        returnInfo[deviceNo] = 4;
-    }
+    returnInfo = returnInfo + indexOfFan;
+    //     returnInfo[deviceNo] += 1;
+    // } else if (seconds > 3 && seconds <= 6) {
+    //     returnInfo[deviceNo] += 2;
+    // } else if ( seconds > 6 && seconds <= 9) {
+    //     returnInfo[deviceNo] += 3;
+    // } else {
+    //     returnInfo[deviceNo] += 4;
+    // }
 
-    console.log('returnInfo: ', returnInfo.join(''));
+    // if (returnInfo[deviceNo] > 4) {
+    //     returnInfo[deviceNo] = 4;
+    // }
+
+    //console.log('returnInfo: ', returnInfo.join(''));
+    console.log('returnInfo:', returnInfo);
 });
 
 router.get('/returnInfo', function *(next) {
-
-    this.response.body = returnInfo.join('');
+    this.response.body = returnInfo;
+    //this.response.body = returnInfo.join('');
 })
 
 module.exports = router;
