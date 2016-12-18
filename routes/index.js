@@ -8,7 +8,7 @@ var appSecret = "3adf5088350e3f063f81ff838e872d1b";
 var token = "WeChatMaoge";
 
 var users = 0;
-var returnInfo = [0, 0, 0, 0, 0, 0];
+var returnInfo = [0, 0, 0, 0];
 
 router.get('/', function *(next) {
     ++users;
@@ -48,6 +48,7 @@ router.get('/', function *(next) {
 
 
 router.post('/handleRecord', function *(next) {
+    users++;
     var data = this.request.body;
     seconds = data.seconds;
     var deviceNo = users % 6;
