@@ -1,7 +1,14 @@
+// {
+//     "wechat": {
+//         "appId": "wxf540ae16cc7b380d",
+//         "appSecret": "3adf5088350e3f063f81ff838e872d1b",
+//         "token": "WeChatMaoge"
+//     }
+// }
+
 {
-    "wechat": {
-        "appId": "wxf540ae16cc7b380d",
-        "appSecret": "3adf5088350e3f063f81ff838e872d1b",
-        "token": "WeChatMaoge"
-    }
+	"wechat":{
+		"appid":"wx131d8524d26a408a",
+		"secret":"f947608cd5f18131c7d3a1e89798c8b4"
+	}
 }
