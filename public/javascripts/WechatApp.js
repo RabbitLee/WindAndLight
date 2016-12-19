@@ -48,8 +48,8 @@ var timer;
 window.onload = function () {
     var Btn = document.getElementById('content');
     Btn.onclick = function() {
-        if (Btn.value == "record") {
-            Btn.value = "activated";
+        if (Btn.value == "开始录音") {
+            Btn.value = "结束录音";
             wx.startRecord({
                 cancel: function () {
                     alert('用户拒绝授权录音');
@@ -59,7 +59,7 @@ window.onload = function () {
                 }
             });
         } else {
-            Btn.value = "record";
+            Btn.value = "开始录音";
             clearInterval(timer);
             wx.stopRecord({
                 success: function (res) {
