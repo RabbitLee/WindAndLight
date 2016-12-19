@@ -3,9 +3,9 @@ var request = require('request');
 var sign = require('../config/generateSign.js');
 var https = require('https');
 
-var appId = "wxf540ae16cc7b380d";
-var appSecret = "3adf5088350e3f063f81ff838e872d1b";
-var token = "WeChatMaoge";
+var appId = "wx131d8524d26a408a";
+var appSecret = "f947608cd5f18131c7d3a1e89798c8b4";
+//var token = "WeChatMaoge";
 
 var users = 0;
 var returnInfo = "";

@@ -10,5 +10,6 @@
 	"wechat":{
 		"appid":"wx131d8524d26a408a",
 		"secret":"f947608cd5f18131c7d3a1e89798c8b4"
+		"token": "WeChatMaoge"
 	}
 }
